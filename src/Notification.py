@@ -26,8 +26,9 @@ class Notification:
     Triggers informative and effective notification on every change of battery state.
     """
 
-    last_notification: str
-    last_percentage: int
+    if platform.python_version() >= '3.6':
+        last_notification: str
+        last_percentage: int
 
     def __init__(self, type: str) -> None:
         # initiating notification
